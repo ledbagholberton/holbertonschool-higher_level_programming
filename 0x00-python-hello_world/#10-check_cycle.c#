@@ -1,0 +1,9 @@
+#include "lists.h"
+/** 
+ * main - Enrty
+ * 
+ * Return: 0 if no cycle / 1 if exist
+ */
+
+int main(void)
+{
