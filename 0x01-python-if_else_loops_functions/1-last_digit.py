@@ -8,7 +8,7 @@ while (abs(number1) < 10):
     number2 = number2 * 10
 
 last_num = abs(number) % number2
-print("Last digit of {:d} is {:d}".format(number,last_num), end =" ")
+print("Last digit of {:d} is {:d}".format(number, last_num), nd=" ")
 if (last_num > 5):
     print("and is greater than 5")
 elif(last_num == 0):
