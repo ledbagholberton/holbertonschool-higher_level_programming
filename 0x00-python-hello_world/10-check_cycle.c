@@ -14,11 +14,13 @@ int check_cycle(listint_t *list)
 	aux = list;
 	aux2 = list;
 
-		do {
+	if (list == NULL || aux -> next == NULL || aux -> next -> next == NULL)
+		return(0);
+	do {
 		aux = aux->next;
 		aux2 = aux2->next->next;
 		if (aux == aux2)
 			return (1);
-		} while (aux != NULL && aux2 != NULL && aux2->next != NULL);
-return (0);
+	} while (aux != NULL && aux2 != NULL && aux2->next != NULL);
+	return (0);
 }
