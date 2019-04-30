@@ -6,8 +6,7 @@ number2 = 10
 while (abs(number1) < 10):
     number1 = number1 // 10
     number2 = number2 * 10
-
-last_num = abs(number) % number2
+last_num = (abs(number) % number2) * (number // abs(number))
 print("Last digit of {:d} is {:d}".format(number, last_num), end=" ")
 if (last_num > 5):
     print("and is greater than 5")
