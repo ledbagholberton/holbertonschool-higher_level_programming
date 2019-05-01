@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-number1 = number
-number2 = 10
-while (abs(number1) < 10):
-    number1 = number1 // 10
-    number2 = number2 * 10
-last_num = (abs(number) % number2) * (number // abs(number))
+number1 = abs(number) % 10
+last_num = (number1) * (number // abs(number))
 print("Last digit of {:d} is {:d}".format(number, last_num), end=" ")
 if (last_num > 5):
     print("and is greater than 5")
