@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-import sys as mysys
-mysys.stdout.write("#pythoniscool\n")
+__import__("os").write(1, bytes("#pythoniscool\n","utf-8"))

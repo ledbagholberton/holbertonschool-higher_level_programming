@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import dis
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     a = 10
@@ -12,3 +12,5 @@ if __name__ == "__main__":
     print("{:d} - {:d} = {:d}".format(a, b, d))
     print("{:d} * {:d} = {:d}".format(a, b, e))
     print("{:d} / {:d} = {:d}".format(a, b, f))
+
+dis.dis(calculator_1)
