@@ -4,5 +4,7 @@ def print_matrix_integer(matrix=[[]]):
         print()
     else:
         long = len(matrix[0])
-        for i in range(0, long):
-            print(matrix[i])
+        for i in range(long):
+           # long2 = len(matrix[i])
+           # for j in range(long2):
+                print(matrix[i])
