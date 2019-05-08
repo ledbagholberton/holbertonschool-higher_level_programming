@@ -1,14 +1,14 @@
+#include "lists.h"
 /**
- * print_listint - prints all elements of a listint_t list
- * @h: pointer to head of list
- * Return: number of nodes
+ * is_palindrome - define if the linked list is palindrome
+ * @head: pointer to head of list
+ * Return: 1 if palindrome/ 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t aux;
-	int cont;
-	int buffer = 
-	
+	listint_t *aux;
+	int cont, suma, pos;
+
 	aux = *head;
 	cont = 0;
 	while (aux != NULL)
@@ -16,18 +16,36 @@ int is_palindrome(listint_t **head)
 		aux = aux->next;
 		cont++;
 	}
-	if (cont % 2 == 0)
-		cont1 = cont / 2;
-	else
-		cont1 = (cont - 1)/ 2;
-       
-	aux = *head;
+	pos = 1;
 	suma = 0;
-	while (cont1 > 0)
+	aux = *head;
+	while (pos <= cont / 2)
+	{
+		suma = suma + pos * aux->n;
+		aux = aux->next;
+		pos++;
+	}
+	pos--;
+	if (cont % 2 == 0)
+	{
+		while (pos > 0)
+		{
+			suma = suma - pos * aux->n;
+			aux = aux->next;
+			pos--;
+		}
+	}
+	else
 	{
 		aux = aux->next;
-		suma = suma + aux->n;
-		cont1--;
+		while (pos > 0)
+		{
+			suma = suma - pos * aux->n;
+			aux = aux->next;
+			pos--;
+		}
 	}
-	
-		
+	if (suma == 0)
+		return (1);
+	return (0);
+}
