@@ -2,6 +2,6 @@
 def multiply_by_2(a_dictionary):
     new_d = a_dictionary.copy()
     for n, v in new_d.items():
-        d1 = {n : v * 2}
-        new_d.update(d1)
+        item_dict = {n: v * 2}
+        new_d.update(item_dict)
     return(new_d)
