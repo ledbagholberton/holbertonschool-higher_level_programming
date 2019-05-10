@@ -6,27 +6,25 @@
  */
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t size;
+	Py_ssize_t size, cont;
 	char *string;
-	int cont, cont1, i;
+	int i;
 
 	size = PyBytes_Size(p);
 	string = PyBytes_AsString(p);
-	for (cont = 0; string[cont] != '\0';cont++)
-		;
 	printf("[.] bytes object info\n");
 	printf("size: %li\n", size);
 	printf("trying string: %s\n", string);
-	if (cont <= 10)
-		cont1 = cont;
+	if (size <= 10)
+		cont = size + 1;
 	else
-		cont1 = 10;
-	printf("first %d bytes: ", cont1);
+		cont = 10;
+	printf("first %li bytes: ", cont);
 	i = 0;
-	while (cont1 >= 0)
+	while (cont > 0)
 	{
-		printf("%x", string[i]);
-		cont1--;
+		printf("%02x ", string[i]);
+		cont--;
 		i++;
 	}
 	printf("\n");
