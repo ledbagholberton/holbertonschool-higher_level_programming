@@ -10,24 +10,29 @@ void print_python_bytes(PyObject *p)
 	char *string;
 	int i;
 
-	size = PyBytes_Size(p);
-	string = PyBytes_AsString(p);
-	printf("[.] bytes object info\n");
-	printf("size: %li\n", size);
-	printf("trying string: %s\n", string);
-	if (size <= 10)
-		cont = size + 1;
-	else
-		cont = 10;
-	printf("first %li bytes: ", cont);
-	i = 0;
-	while (cont > 0)
+	if (PyBytes_Check(p))
 	{
-		printf("%02x ", string[i]);
-		cont--;
-		i++;
+		size = PyBytes_Size(p);
+		string = PyBytes_AsString(p);
+		printf("[.] bytes object info\n");
+		printf("size: %li\n", size);
+		printf("trying string: %s\n", string);
+		if (size <= 10)
+			cont = size + 1;
+		else
+			cont = 10;
+		printf("first %li bytes: ", cont);
+		i = 0;
+		while (cont > 0)
+		{
+			printf("%02x ", string[i] & 0xFF);
+			cont--;
+			i++;
+		}
+		printf("\n");
 	}
-	printf("\n");
+	else
+		printf("[ERROR] Invalid Bytes Object\n");
 }
 
 
@@ -48,8 +53,8 @@ void print_python_list(PyObject *p)
 	for (iter = 0; iter < tam_list; iter++)
 	{
 		pyobject_per = PyList_GetItem(p, iter);
+//		type_obj = (((PyObject*)(pyobject_per))->tp_name)
 		type_obj = Py_TYPE(pyobject_per)->tp_name;
 		printf("Element %li: %s\n", iter, type_obj);
 	}
 }
-
