@@ -4,9 +4,5 @@ def square_matrix_simple(matrix=[]):
         if matrix ==  []:
             return matrix
         else:
-            new_matrix = matrix.copy()
-            for i in range(0, len(matrix)):
-                for j in range(0, len(matrix[i])):
-                    a = new_matrix[i][j]**2
-                    new_matrix[i][j] = a
-            return(new_matrix)
+            new_m = list(map(lambda x: list(map(lambda y: y * 2, x)), matrix))
+            return(new_m)
