@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    mayor = 0
     new_d = a_dictionary.copy()
-    for a, b in a_dictionary.items():
-        if b > mayor:
-            mayor = b
-            new_d = dic(a=b)
-    return new_d
+    for n, v in new_d.items():
+        d1 = {n : v * 2}
+        new_d.update(d1)
+    return(new_d)
