@@ -6,9 +6,9 @@ def weight_average(my_list=[]):
         a, b = 0, 0
 
         for (x, y) in my_list:
-            if x == None:
+            if x is None:
                 x = 0
-            if y == None:
+            if y is None:
                 y = 0
             a = (x * y) + a
             b = y + b
