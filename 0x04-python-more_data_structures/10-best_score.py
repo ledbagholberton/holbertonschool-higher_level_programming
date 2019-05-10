@@ -6,5 +6,5 @@ def best_score(a_dictionary):
             for a, b in a_dictionary.items():
                 if b > mayor:
                     mayor = b
-                    key_mayor =  a
+                    key_mayor = a
             return key_mayor
