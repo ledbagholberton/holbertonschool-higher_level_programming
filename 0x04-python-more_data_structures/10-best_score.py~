@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+def best_score(a_dictionary):
+    mayor = 0
+    new_d = a_dictionary.copy()
+    for a, b in a_dictionary.items():
+        if b > mayor:
+            mayor = b
+            new_d = dict (a = b)
+    return new_d
