@@ -14,7 +14,7 @@ class Square:
         else:
             for i in range(self.size):
                 for j in range(self.size):
-                    print("*", end="")
+                    print("#", end="")
                 print()
 
     @property
