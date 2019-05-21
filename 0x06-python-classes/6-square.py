@@ -15,7 +15,6 @@ class Square:
         else:
             for a in range(self.position[1]):
                 print()
-                
             for i in range(self.size):
                 for a in range(self.position[0]):
                     print("_", end="")
