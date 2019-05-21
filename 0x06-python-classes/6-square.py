@@ -10,11 +10,12 @@ class Square:
         return self.__area
 
     def my_print(self):
-        for a in range(self.position[1]):
-            print()
         if self.size == 0:
             print()
         else:
+            for a in range(self.position[1]):
+                print()
+                
             for i in range(self.size):
                 for a in range(self.position[0]):
                     print("_", end="")
