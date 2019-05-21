@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 class Square:
-    def __init__(self, size):
-        try:
-            if size < 0:
-                    print("size must be >= 0")
-            else:
-                self.__size = size
-        except (TypeError, ValueError):
-            print("size must be an integer")
+    def __init__(self, size=0):
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
