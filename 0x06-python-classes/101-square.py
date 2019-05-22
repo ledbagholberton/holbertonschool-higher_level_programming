@@ -25,7 +25,7 @@ class Square:
     def __str__(self):
         list_print = []
         if self.size == 0:
-            list_print.append("\n")
+            list_print.append("")
         else:
             for a in range(self.position[1]):
                 list_print.append("\n")
