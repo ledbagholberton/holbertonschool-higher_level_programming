@@ -26,14 +26,13 @@ class Node:
             else:
                 self.__next_node = next_node
 
+
 class SinglyLinkedList:
     def __init__(self):
         self.__head = head
-        
 
         def sorted_insert(self, value)
         new_Node = Node(value)
         while Node.data < value:
             tmp_Node = Node.next_node
-
         new_Node.next_node = tmp_Node
