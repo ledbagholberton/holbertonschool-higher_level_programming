@@ -1,0 +1,29 @@
+Function add_integer (a, b)
+======================
+
+Using add_integer
+-------------------
+::
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 1)
+2
+>>> add_integer(1, -1)
+0
+>>> add_integer("c", -1)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(1, "c")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(1.01323, 2)
+3
+>>> type(add_integer(1.02, 1.05)) is int
+True
+>>> add_integer(1)
+99
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
