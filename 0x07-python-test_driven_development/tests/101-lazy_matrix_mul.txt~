@@ -1,0 +1,37 @@
+Function lazy_matrix_mul(m_a, m_b)
+======================
+
+Using lazy_matrix_mul
+-------------------
+::
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+[[ 7 10]
+ [15 22]]
+>>> m_a = [[1, 2]]
+>>> m_b =  [[3, 4], [5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+[[13 16]]
+>>> m_a = [[1, 2]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+>>> div = 1
+>>> matrix = [[5 , 5, 5], 10, [15, 15, 15]]
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = {3: 5, 4: 22, 5: 45}
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats

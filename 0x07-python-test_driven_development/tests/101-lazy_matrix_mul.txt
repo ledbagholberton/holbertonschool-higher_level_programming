@@ -1,0 +1,68 @@
+Function lazy_matrix_mul(m_a, m_b)
+======================
+
+Using lazy_matrix_mul
+-------------------
+::
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+[[ 7 10]
+ [15 22]]
+>>> m_a = [[1, 2]]
+>>> m_b =  [[3, 4], [5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+[[13 16]]
+
+>>> m_a = "error"
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+>>> m_a = [[1, 2]]
+>>> m_b =  "error'
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+
+>>> m_a = ["c", [1, 2]]
+>>> m_b =  [[3, 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list of lists
+>>> m_a = [[0, 1], [1, 2]]
+>>> m_b =  [[3], "c"]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list of lists
+
+>>> m_a = [[]]
+>>> m_b =  [[3, 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a can't be empty
+>>> m_a = [[0, 1], [1, 2]]
+>>> m_b =  [[]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b can't be empty
+
+>>> m_a = [['c', 2]]
+>>> m_b =  [[3, 4], [5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats
+
+>>> m_a = [[1, 2]]
+>>> m_b =  [['c', 4], [5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b should contain only integers or floats

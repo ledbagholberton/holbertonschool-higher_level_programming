@@ -1,0 +1,68 @@
+Function matrix_mul(m_a, m_b)
+======================
+
+Using matrix_mul
+-------------------
+::
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+[[ 7 10]
+ [15 22]]
+>>> m_a = [[1, 2]]
+>>> m_b =  [[3, 4], [5, 6]]
+>>> matrix_mul(m_a, m_b)
+[[13 16]]
+
+>>> m_a = "error"
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+>>> m_a = [[1, 2]]
+>>> m_b =  "error'
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+
+>>> m_a = ["c", [1, 2]]
+>>> m_b =  [[3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list of lists
+>>> m_a = [[0, 1], [1, 2]]
+>>> m_b =  [[3], "c"]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list of lists
+
+>>> m_a = [[]]
+>>> m_b =  [[3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a can't be empty
+>>> m_a = [[0, 1], [1, 2]]
+>>> m_b =  [[]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b can't be empty
+
+>>> m_a = [['c', 2]]
+>>> m_b =  [[3, 4], [5, 6]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats
+
+>>> m_a = [[1, 2]]
+>>> m_b =  [['c', 4], [5, 6]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b should contain only integers or floats
