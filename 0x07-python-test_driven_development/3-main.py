@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+say_my_name = __import__('3-say_my_name').say_my_name
+
+say_my_name("John", "Smith")
+say_my_name("Walter", "White")
+say_my_name("Bob", "")
+say_my_name("Bob")
+say_my_name(None, "Smith")
+say_my_name("Bob", None)
+say_my_name("", "Smith")
+say_my_name(["" ,"Smith"])
+say_my_name("Bob")
+say_my_name(["Bob", "Smith"])
+say_my_name(1)
+
+try:
+    say_my_name(12, "White")
+except Exception as e:
+    print(e)

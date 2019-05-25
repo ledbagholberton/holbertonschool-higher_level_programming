@@ -1,0 +1,38 @@
+Function matrix_divided(matrix, div)
+======================
+
+Using matrix_divided
+-------------------
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [[5 , 5, 5], [10, 10, 10], [15, 15, 15]]
+>>> div = 5
+>>> matrix_divided(matrix, div)
+[[1.0, 1.0, 1.0], [2.0, 2.0, 2.0], [3.0, 3.0, 3.0]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+[[2.5, 2.5, 2.5], [5.0, 5.0, 5.0], [7.5, 7.5, 7.5]]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+[[1.67, 1.67, 1.67], [3.33, 3.33, 3.33], [5.0, 5.0, 5.0]]
+>>> div = "c"
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+>>> div = 1
+>>> matrix = [[5 , 5, 5], 10, [15, 15, 15]]
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = {3: 5, 4: 22, 5: 45}
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats

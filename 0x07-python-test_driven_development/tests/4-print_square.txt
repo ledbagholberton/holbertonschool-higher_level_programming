@@ -1,0 +1,27 @@
+Function print_square(size)
+======================
+
+Using print_square
+-------------------
+::
+>>> print_square = __import__('4-print_square').print_square
+>>> size = "c"
+>>> print_square(size)
+Traceback (most recent call last)
+    ...
+TypeError: size must be an integer
+>>> size = 1
+>>> print_square(size)
+#
+>>> size = 0
+>>> print_square(size)
+>>> size = 3
+>>> print_square(size)
+###
+###
+###
+>>> size = -1
+>>> print_square(size)
+Traceback (most recent call last)
+    ...
+ValueError: size must be >= 0

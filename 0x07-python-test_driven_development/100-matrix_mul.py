@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+def matrix_mul(m_a, m_b):
+    """ Function that multiplies two matrix
+
+        Args:
+           m_a: matrix a
+           m_b: matrix b
+
+        Returns:
+           new matrix with the multiplication or Errors
+    """
+    if type(matrix) is not list:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+
+    m_a_files = len(m_a)
+    for row in m_a:
+        m_a_rows = len(row)
+    m_b_files = len(m_b)
+    for row in m_b:
+        m_b_rows = len(row)
+    if (m_a_files is not m_b_rows):
+        raise ValueError("m_a and m_b can't be multiplied")
+    new_matrix = []
+    for row_a in m_a:
+        for i, row_a in enumerate(row_a):
+
+        if type(row) is not list:
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        for index, j in enumerate(row[:]):
+            if type(j) is not int and type(j) is not float:
+                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            new_matrix[i][index] = round(j / div, 2)
+    return (new_matrix)
