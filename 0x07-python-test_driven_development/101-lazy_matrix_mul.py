@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-def matrix_mul(m_a, m_b):
-    """ Function that multiplies two matrix
+import numpy as np
+def lazy_matrix_mul(m_a, m_b):
+    """ Function that multiplies two matrix with Numpy
 
         Args:
            m_a: matrix a
@@ -32,4 +33,4 @@ def matrix_mul(m_a, m_b):
             if type(j) is not int and type(j) is not float:
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
             new_matrix[i][index] = round(j / div, 2)
-    return (new_matrix)
+    return np.dot (m_a, m_b)
