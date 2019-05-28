@@ -3,11 +3,12 @@
 
 """
 
+import sys
+
 def printSolution(board, n):
-    for i in range(n):
-        for j in range(n):
-            print(board[i][j]),
-        print()
+    for row in range(n):
+        print (board[row])
+    print()
 
 def isSafe(board, row, col, n):
     """ Found if a position is safe or atacked by other Queen
@@ -32,8 +33,7 @@ def isSafe(board, row, col, n):
     for i,j in zip(range(row, n, 1), range(col,-1,-1)):
         if board[i][j] == 1:
             return False
-
-    return True
+        return True
 
 def solveNQUtil(board, col, n):
     """ Found if a queen was placed on the column
@@ -49,27 +49,34 @@ def solveNQUtil(board, col, n):
 
     """ Iter by col tryng to place the Queen row by row"""
     for i in range(n):
-        if isSafe(board, i, col):
+        if isSafe(board, i, col, n):
             board[i][col] = 1
-            if solveNQUtil(board, col+1) == True:
+            if solveNQUtil(board, col+1, n) == True:
                 return True
             board[i][col] = 0
-    return False
 
+    return False
 
 def solveNQ(n):
     """ Starting in an empty board, the function look for an arrange
     of Queens complying the challenge"""
 
-    board = []
-    for i in range(n):
-        for j in range(n):
-            board[i][j].append(0)
-
+    board = [[0 for x in range(n)] for y in range(n)]
     if solveNQUtil(board, 0, n) == False:
         print("Solution does not exist")
         return False
-        printSolution(board)
+    printSolution(board, n)
     return True
 
-solveNQ(4)
+if len(sys.argv) is not 2:
+    print("Usage: nqueens N")
+    exit(1)
+n = int(sys.argv[1])
+print(n)
+#if n is not int:
+#    print("N must be a number")
+#    exit(1)
+if n < 4:
+    print("N must be at least 4")
+    exit(1)
+solveNQ(n)
