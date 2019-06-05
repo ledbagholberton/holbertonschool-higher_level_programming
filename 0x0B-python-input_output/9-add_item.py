@@ -14,4 +14,3 @@ if len(sys.argv) > 1:
     sys.argv.pop(0)
     my_list = my_list + sys.argv
     save_to_json_file(my_list, filename)
-
