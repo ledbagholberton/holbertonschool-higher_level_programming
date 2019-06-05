@@ -1,0 +1,1 @@
+Here you will find Python Code related with Class Inheritance and others
