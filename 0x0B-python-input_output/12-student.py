@@ -13,12 +13,10 @@ class Student:
     def to_json(self, attrs=None):
         if type(attrs) is list:
             my_dict = {}
-            cla = self.__dict__.keys()
-            val = self.__dict__.keys()
             for elem in attrs:
-                if elem in cla:
+                if elem in self.__dict__.keys():
                     value = getattr(self, elem)
                     my_dict.update({elem: value})
-                    return my_dict
-                else:
-                    return self.__dict__
+            return my_dict
+        else:
+            return self.__dict__
