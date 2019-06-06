@@ -19,9 +19,9 @@ class Student:
                 if elem in cla:
                     value = getattr(self, elem)
                     my_dict.update({elem: value})
-                    return my_dict
-                else:
-                    return self.__dict__
+            return my_dict
+        else:
+            return self.__dict__
 
     def reload_from_json(self, json):
         dic = json
