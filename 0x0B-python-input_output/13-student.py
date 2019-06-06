@@ -21,3 +21,8 @@ class Student:
                     return my_dict
                 else:
                     return self.__dict__
+
+    def reload_from_json(self, json):
+        dic = json
+        for key, value in zip(dic.keys(), dic.values()):
+            setattr(self, key, value)
