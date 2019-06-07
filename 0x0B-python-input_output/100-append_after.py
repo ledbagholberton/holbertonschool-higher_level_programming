@@ -11,5 +11,4 @@ def append_after(filename="", search_string="", new_string=""):
                 b = b + a
             a = f.readline()
     with open(filename, 'w') as f:
-        print(b,end="")
         f.write(b)
