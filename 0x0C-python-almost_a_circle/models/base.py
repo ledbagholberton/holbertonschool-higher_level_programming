@@ -21,10 +21,9 @@ class Base:
     def to_json_string(list_dictionaries):
         """ to_json_string"""
         if (list_dictionaries is None) or (len(list_dictionaries) == 0):
-            return("[]")
-        else:
-            a = json.dumps(list_dictionaries)
-            return (a)
+            return "[]"
+        a = json.dumps(list_dictionaries)
+        return (a)
 
     @classmethod
     def save_to_file(cls, list_objs):
