@@ -20,7 +20,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ to_json_string"""
-        if list_dictionaries is None:
+        if (list_dictionaries is None) or (len(list_dictionaries) == 0):
             return("[]")
         else:
             a = json.dumps(list_dictionaries)
@@ -52,7 +52,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Create"""
-        dummy_rc = cls(1, 1)
+        if cls.__name__ == "Rectangle":
+            dummy_rc = cls(1, 1)
+        else:
+            dummy_rc = cls(1)
         dummy_rc.update(**dictionary)
         return dummy_rc
 
