@@ -8,21 +8,26 @@ class Square(Rectangle):
     """ Square class"""
 
     def __init__(self, size, x=0, y=0, id=None):
+        """ Init """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
+        """ getter size """
         return super().width
 
     @size.setter
     def size(self, size):
+        """ setter size """
         super(Square, self.__class__).width.fset(self, size)
 
     def __str__(self):
+        """ __str___ """
         return ("[Square] ({:d}) {:d}/{:d} - {:d}".
                 format(self.id, super().x, super().y, self.size))
 
     def update(self, *args, **kargs):
+        """ Update """
         if len(args) is 0:
             for key, value in kargs.items():
                 if key == "id":
@@ -50,6 +55,7 @@ class Square(Rectangle):
                 self.y = my_arg2[3]
 
     def to_dictionary(self):
+        """ to dictionary"""
         return (super().__dict__)
 
     def to_dictionary(self):

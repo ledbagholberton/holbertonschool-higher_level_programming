@@ -14,8 +14,13 @@ class Pruebas(unittest.TestCase):
         self.assertEqual(b2.id, 2)
         b3 = RectangleClass(10, 2, 0, 0, 26)
         self.assertEqual(b3.id, 26)
-        b4 = RectangleClass(10, "2")
-        raise [TypeError] height must be an integer
+        with Assertion(TypeError):
+            b4 = RectangleClass(10, "2")
+            b5 = RectangleClass("10", 2)
+            b6 = RectangleClass("10", 2)
+            b7 = RectangleClass("10", 2)
+
+
         r = Rectangle(10, 2)
         r.width = -10
         raise [ValueError] width must be > 0

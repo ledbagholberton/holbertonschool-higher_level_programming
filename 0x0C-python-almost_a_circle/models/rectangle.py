@@ -7,6 +7,7 @@ class Rectangle(Base):
     """ Rectangle class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Init """
         self.width = width
         self.height = height
         self.x = x
@@ -15,10 +16,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ width getter"""
         return self.__width
 
     @width.setter
     def width(self, width):
+        """ width setter """
         if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width <= 0:
@@ -28,10 +31,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ Height """
         return self.__height
 
     @height.setter
     def height(self, height):
+        """ height setter"""
         if type(height) is not int:
             raise TypeError("height must be an integer")
         elif height <= 0:
@@ -41,10 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ x getter """
         return self.__x
 
     @x.setter
     def x(self, x):
+        """ x setter """
         if type(x) is not int:
             raise TypeError("x must be an integer")
         elif x < 0:
@@ -54,10 +61,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ y getter """
         return self.__y
 
     @y.setter
     def y(self, y):
+        """ y setter"""
         if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
@@ -66,10 +75,12 @@ class Rectangle(Base):
             self.__y = y
 
     def area(self):
+        """ Area """
         self.area = self.__width * self.__height
         return self.area
 
     def display(self):
+        """Display """
         for i in range(self.__x):
             print()
         for i in range(self.__height):
@@ -80,11 +91,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """ __str__ """
         return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".
                 format(self.id, self.__x, self.__y,
                        self.__width, self.__height))
 
     def update(self, *args, **kargs):
+        """ Update """
         if len(args) is 0:
             for key, value in kargs.items():
                 if key == "id":
@@ -116,6 +129,7 @@ class Rectangle(Base):
                 self.__y = my_arg2[4]
 
     def to_dictionary(self):
+        """ to dictionary """
         my_list = ["height", "width", "x", "y", "id"]
         sorted(self.__dict__)
         list_keys = self.__dict__.keys()
