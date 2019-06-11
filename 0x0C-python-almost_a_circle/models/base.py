@@ -63,20 +63,35 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        csv_list = []
-        if list_objs is None:
-            list_objs = []
+        names_rec = ["id", "width", "height", "x", "y"]
+        names_squ = ["id", "size", "x", "y"]
         filename = cls.__name__ + ".csv"
+        if cls.__name__ is "Rectangle":
+            names =  names_rec
+        else:
+            names =  names_squ
         with open(filename, mode='w') as csv_file:
-            csv_writer = csv.writer(csv_file, delimiter=',')
+            csv_writer = csv.DictWriter(csv_file, fieldnames=names)
+            if list_objs is None:
+                csv_writer.writerow([[]])
+            else:
+                csv_writer.writeheader()
+                for a in list_objs:
+                    csv_writer.writerow(a.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
-        b = []
         filename = cls.__name__ + ".csv"
+        my_list = []
         try:
-            with open(filename, 'r') as csv_file:
-                csv_reader = csv.reader(csv_file, delimiter=',')
-            return csv_reader
+            with open(filename, newline = '') as csv_file:
+                csv_reader = csv.DictReader(csv_file)
+                for row in csv_reader:
+                    for keys, values in row.items():
+                        row[keys] = int(values)
+                        print (row[keys])
+                    my_list.append(row)
+                print("list", my_list)
+                return [cls.create(**a) for a in  my_list]
         except IOError:
             return []
