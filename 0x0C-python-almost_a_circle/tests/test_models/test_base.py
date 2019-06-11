@@ -26,6 +26,10 @@ class Pruebas(unittest.TestCase):
         self.assertEqual(b2.id, 2)
         b3 = BaseClass(26)
         self.assertEqual(b3.id, 26)
+        with self.assertRaises(TypeError):
+        b4 = BaseClass("555")
+
+
 """
     def test_id_2(self):
         b1 = Base()

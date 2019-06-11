@@ -1,11 +1,11 @@
 #!/usr/bin/python3
+""" class base """
 import json
 import csv
 
 
 class Base:
-    """ Class Base
-    """
+    """ Class Base"""
 
     __nb_objects = 0
 
