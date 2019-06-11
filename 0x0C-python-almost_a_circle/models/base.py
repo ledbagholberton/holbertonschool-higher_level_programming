@@ -2,7 +2,7 @@
 """ class base """
 import json
 import csv
-
+import turtle
 
 class Base:
     """ Class Base"""
@@ -109,3 +109,35 @@ class Base:
                 return [cls.create(**a) for a in my_list]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        "draw with turtle"
+        for elem in list_rectangles:
+            turtle.penup()
+            turtle.home()
+            turtle.color("green")
+            turtle.setpos(elem.x, elem.y)
+            turtle.pendown()
+            turtle.forward(elem.width)
+            turtle.left(90)
+            turtle.forward(elem.height)
+            turtle.left(90)
+            turtle.forward(elem.width)
+            turtle.left(90)
+            turtle.forward(elem.height)
+            turtle.exitonclick()
+        for elem in list_squares:
+            turtle.penup()
+            turtle.home()
+            turtle.color("red")
+            turtle.setpos(elem.x, elem.y)
+            turtle.pendown()
+            turtle.forward(elem.size)
+            turtle.left(90)
+            turtle.forward(elem.size)
+            turtle.right(90)
+            turtle.forward(elem.size)
+            turtle.right(90)
+            turtle.forward(elem.size)
+            turtle.exitonclick()
