@@ -55,9 +55,6 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ to dictionary"""
-        return (super().__dict__)
-
-    def to_dictionary(self):
         my_list = ["height", "width", "x", "y", "id"]
         sorted(super().__dict__)
         list_keys = super().__dict__.keys()
