@@ -19,7 +19,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ static method to_json_string"""
+        """ static method to_json_string """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
@@ -28,7 +28,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Save to file"""
+        """ Save to file """
         json_list = []
         if list_objs is None:
             list_objs = []
@@ -43,7 +43,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ Static method from_json_string"""
+        """ Static method from_json_string """
         if (json_string is None) or (len(json_string) == 0):
             return([])
         else:
@@ -51,7 +51,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ Create"""
+        """ Create """
         if cls.__name__ == "Rectangle":
             dummy_rc = cls(1, 1)
         else:
