@@ -10,7 +10,9 @@ class Base:
     def __init__(self, id=None):
         """ Init method"""
         self.id = id
-        if self.id is None:
+        if self.id is not None:
+            pass
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
