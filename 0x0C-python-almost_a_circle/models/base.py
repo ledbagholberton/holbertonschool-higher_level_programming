@@ -61,7 +61,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ load_from_file"""
+        """ load_from_file """
         b = []
         filename = cls.__name__ + ".json"
         try:
@@ -75,7 +75,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ save_to_file_csv"""
+        """ save_to_file_csv """
         names_rec = ["id", "width", "height", "x", "y"]
         names_squ = ["id", "size", "x", "y"]
         filename = cls.__name__ + ".csv"
@@ -94,7 +94,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """ load from file"""
+        """ load from file """
         filename = cls.__name__ + ".csv"
         my_list = []
         try:
@@ -103,7 +103,7 @@ class Base:
                 for row in csv_reader:
                     for keys, values in row.items():
                         row[keys] = int(values)
-                        print (row[keys])
+                        print(row[keys])
                     my_list.append(row)
                 print("list", my_list)
                 return [cls.create(**a) for a in my_list]
