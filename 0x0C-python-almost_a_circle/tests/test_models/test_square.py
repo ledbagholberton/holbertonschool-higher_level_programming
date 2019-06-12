@@ -1,11 +1,14 @@
 import unittest
 from models.square import Square as SquareClass
 
+
 def setUpModule():
         print("I'm setup module from Square")
 
+
 def tearDownModule():
         print("I'm teardown module from Square")
+
 
 class TestSquareClass(unittest.TestCase):
     """

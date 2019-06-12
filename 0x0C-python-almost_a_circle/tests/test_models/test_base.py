@@ -1,11 +1,14 @@
 import unittest
 from models.base import Base as BaseClass
 
+
 def setUpModule():
         print("I'm setup module")
 
+
 def tearDownModule():
         print("I'm teardown module")
+
 
 class TestBaseClass(unittest.TestCase):
     """
@@ -28,7 +31,6 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(self.b2.id, 2)
         self.assertEqual(self.b3.id, 10)
         self.assertEqual(self.b4.id, 56)
-
 
     @classmethod
     def setUpClass(cls):

@@ -1,11 +1,14 @@
 import unittest
 from models.rectangle import Rectangle as RectangleClass
 
+
 def setUpModule():
         print("I'm setup module")
 
+
 def tearDownModule():
         print("I'm teardown module")
+
 
 class TestRectangleClass(unittest.TestCase):
     """
