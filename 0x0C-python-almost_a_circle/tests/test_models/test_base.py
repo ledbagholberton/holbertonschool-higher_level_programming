@@ -1,38 +1,44 @@
 import unittest
 from models.base import Base as BaseClass
 
-"""
-class Testing(unittest.TestCase):
-    def test_string(self):
-        a = 'some'
-        b = 'some'
-        self.assertEqual(a, b)
+def setUpModule():
+        print("I'm setup module")
 
-    def test_boolean(self):
-        a = True
-        b = True
-        self.assertEqual(a, b)
-"""
-class Pruebas(unittest.TestCase):
+def tearDownModule():
+        print("I'm teardown module")
 
-    def test_nb(self):
-        __nb_objects = 55
-        with self.assertRaises(AttributeError)x
+class TestBaseClass(unittest.TestCase):
+    """
+    Setup , teardown
+    """
+    def setUp(self):
+        "test set_up"
+        self.b1 = BaseClass()
+        self.b2 = BaseClass()
+        self.b3 = BaseClass(10)
+        self.b4 = BaseClass(56)
+
+    def tearDown(self):
+        "test tearDown"
+        pass
+
+    def test_id(self):
+        "test test_id"
+        self.assertEqual(self.b1.id, 1)
+        self.assertEqual(self.b2.id, 2)
+        self.assertEqual(self.b3.id, 10)
+        self.assertEqual(self.b4.id, 56)
 
 
-    def test_id_1(self):
-        b1 = BaseClass()
-        self.assertEqual(b1.id, 1)
-        b2 = BaseClass()
-        self.assertEqual(b2.id, 2)
-        b3 = BaseClass(26)
-        self.assertEqual(b3.id, 26)
-"""
-    def test_id_2(self):
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
-        b2 = Base()
-        self.assertEqual(b1.id, 2)
-"""
+    @classmethod
+    def setUpClass(cls):
+        "test Setup cclass"
+        print("I'm a setUpClass")
+
+    @classmethod
+    def tearDownClass(cls):
+        "test tearDown class"
+        print("I'm a tearDownClass")
+
 if __name__ == '__main__':
     unittest.main()
