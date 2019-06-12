@@ -1,54 +1,128 @@
 import unittest
 from models.rectangle import Rectangle as RectangleClass
 
-class Pruebas(unittest.TestCase):
+def setUpModule():
+        print("I'm setup module")
+
+def tearDownModule():
+        print("I'm teardown module")
+
+class TestRectangleClass(unittest.TestCase):
     """
-    def test_nb(self):
-        __nb_objects = 55
-        raise AttributeError()
+    Pruebas
     """
+    def setUp(self):
+        "test setUp"
+        self.r1 = RectangleClass(10, 2)
+        self.r2 = RectangleClass(20, 4, 1, 1)
+        self.r3 = RectangleClass(30, 6, 3, 5, 19)
+
+    def tearDown(self):
+        "test tearDown"
+        pass
+
     def test_id_1(self):
-        b1 = RectangleClass(10, 2)
-        self.assertEqual(b1.id, 1)
-        b2 = RectangleClass(2, 10)
-        self.assertEqual(b2.id, 2)
-        b3 = RectangleClass(10, 2, 0, 0, 26)
-        self.assertEqual(b3.id, 26)
-        with Assertion(TypeError):
-            b4 = RectangleClass(10, "2")
-            b5 = RectangleClass("10", 2)
-            b6 = RectangleClass("10", 2)
-            b7 = RectangleClass("10", 2)
+        "test id"
+        self.assertEqual(self.r1.id, 9)
+        self.assertEqual(self.r2.id, 10)
+        self.assertEqual(self.r3.id, 19)
 
+    def test_h_1(self):
+        "test heigth"
+        self.assertEqual(self.r1.height, 2)
+        self.assertEqual(self.r2.height, 4)
+        self.assertEqual(self.r3.height, 6)
 
-        r = Rectangle(10, 2)
-        r.width = -10
-        raise [ValueError] width must be > 0
-        r = Rectangle(10, 2)
-        r.x = {}
-        raise [ValueError] x must be an integer
-        r = Rectangle(10, 2, 3, -1)
-        raise [ValueError] y must be > 0
-        r1 = Rectangle(3, 2)
-        self.assertEqual(r1.area, 6)
-        r3 = Rectangle(8, 7, 0, 0, 12)
-        self.assertEqual(r3.area, 56)
+    def test_w_1(self):
+        "test width"
+        self.assertEqual(self.r1.width, 10)
+        self.assertEqual(self.r2.width, 20)
+        self.assertEqual(self.r3.width, 30)
 
-"""
-r1 = Rectangle(10, 2)
-    print(r1.id)
+    def test_x_1(self):
+        "test x pos"
+        self.assertEqual(self.r1.x, 0)
+        self.assertEqual(self.r2.x, 1)
+        self.assertEqual(self.r3.x, 3)
 
-    r2 = Rectangle(2, 10)
-    print(r2.id)
+    def test_y_1(self):
+        "test y pos"
+        self.assertEqual(self.r1.y, 0)
+        self.assertEqual(self.r2.y, 1)
+        self.assertEqual(self.r3.y, 5)
 
-    r3 = Rectangle(10, 2, 0, 0, 12)
-    print(r3.id)
+    def test_area_1(self):
+        "test area"
+        self.assertEqual(self.r1.area(), 20)
+        self.assertEqual(self.r2.area(), 80)
+        self.assertEqual(self.r3.area(), 180)
 
-    def test_id_2(self):
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
-        b2 = Base()
-        self.assertEqual(b1.id, 2)
-"""
+    def test_errors(self):
+        with self.assertRaises(TypeError):
+            self.r3.height = "A"
+            self.r2.height = "A"
+            self.r1.height = "A"
+
+        with self.assertRaises(TypeError):
+            self.r3.width = "B"
+            self.r2.width = "B"
+            self.r1.width = "B"
+
+        with self.assertRaises(TypeError):
+            self.r3.x = "C"
+            self.r2.x = "C"
+            self.r1.x = "C"
+
+        with self.assertRaises(TypeError):
+            self.r3.y = "Y"
+            self.r2.y = "Y"
+            self.r1.y = "Y"
+
+        with self.assertRaises(ValueError):
+            self.r3.height = -52
+            self.r2.height = -52
+            self.r1.height = -52
+
+        with self.assertRaises(ValueError):
+            self.r3.width = -26
+            self.r2.width = -26
+            self.r1.width = -26
+
+        with self.assertRaises(ValueError):
+            self.r3.x = -4
+            self.r2.x = -5
+            self.r1.x = -6
+
+        with self.assertRaises(ValueError):
+            self.r3.y = -7
+            self.r2.y = -8
+            self.r1.y = -9
+
+    def test_update(self):
+        self.r1.update(526)
+        self.assertEqual(self.r1.id, 526)
+
+        self.r1.update(526, 4)
+        self.assertEqual(self.r1.width, 4)
+
+        self.r1.update(526, 4, 6)
+        self.assertEqual(self.r1.height, 6)
+
+        self.r1.update(89, 4, 6, 15)
+        self.assertEqual(self.r1.x, 15)
+
+        self.r1.update(89, 4, 6, 15, 30)
+        self.assertEqual(self.r1.y, 30)
+
+    @classmethod
+    def setUpClass(cls):
+        "test Setup cclass"
+        print("I'm a setUpClass")
+
+    @classmethod
+    def tearDownClass(cls):
+        "test tearDown class"
+        print("I'm a tearDownClass")
+
 if __name__ == '__main__':
     unittest.main()
