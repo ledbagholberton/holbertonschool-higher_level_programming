@@ -23,8 +23,8 @@ class TestSquareClass(unittest.TestCase):
 
     def test_id_1(self):
         "test id"
-        self.assertEqual(self.s1.id, 23)
-        self.assertEqual(self.s2.id, 24)
+        self.assertEqual(self.s1.id, 25)
+        self.assertEqual(self.s2.id, 26)
         self.assertEqual(self.s3.id, 19)
 
     def test_s_1(self):
@@ -64,6 +64,18 @@ class TestSquareClass(unittest.TestCase):
         self.s1.update(89, 4, 6, 15)
         self.assertEqual(self.s1.y, 15)
 
+    def test_update_2(self):
+        self.s1.update(size=5)
+        self.assertEqual(self.r1.size, 5)
+
+        self.s1.update(size=15, x=25)
+        self.assertEqual(self.s1.size, 15)
+        self.assertEqual(self.s1.x, 25)
+
+        self.s1.update(size=25, x=35, id=89)
+        self.assertEqual(self.s1.size, 25)
+        self.assertEqual(self.s1.x, 35)
+        self.assertEqual(self.s1.id, 89)
 
     def test_errors(self):
         with self.assertRaises(TypeError):

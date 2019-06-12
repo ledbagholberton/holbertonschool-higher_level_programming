@@ -114,6 +114,25 @@ class TestRectangleClass(unittest.TestCase):
         self.r1.update(89, 4, 6, 15, 30)
         self.assertEqual(self.r1.y, 30)
 
+    def test_update_2(self):
+        self.r1.update(height=5)
+        self.assertEqual(self.r1.height, 5)
+
+        self.r1.update(width=15, x=25)
+        self.assertEqual(self.r1.width, 15)
+        self.assertEqual(self.r1.x, 25)
+
+        self.r1.update(width=25, x=35, id=89)
+        self.assertEqual(self.r1.width, 25)
+        self.assertEqual(self.r1.x, 35)
+        self.assertEqual(self.r1.id, 89)
+
+        self.r1.update(x=15, height=25, y=35, width=45)
+        self.assertEqual(self.r1.x, 15)
+        self.assertEqual(self.r1.height, 25)
+        self.assertEqual(self.r1.y, 35)
+        self.assertEqual(self.r1.width, 45)
+
     @classmethod
     def setUpClass(cls):
         "test Setup cclass"
