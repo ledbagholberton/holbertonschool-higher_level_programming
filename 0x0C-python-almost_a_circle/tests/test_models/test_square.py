@@ -66,7 +66,7 @@ class TestSquareClass(unittest.TestCase):
 
     def test_update_2(self):
         self.s1.update(size=5)
-        self.assertEqual(self.r1.size, 5)
+        self.assertEqual(self.s1.size, 5)
 
         self.s1.update(size=15, x=25)
         self.assertEqual(self.s1.size, 15)
