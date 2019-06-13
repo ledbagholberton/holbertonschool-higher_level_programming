@@ -104,9 +104,7 @@ class Base:
                 for row in csv_reader:
                     for keys, values in row.items():
                         row[keys] = int(values)
-                        print(row[keys])
                     my_list.append(row)
-                print("list", my_list)
                 return [cls.create(**a) for a in my_list]
         except IOError:
             return []
