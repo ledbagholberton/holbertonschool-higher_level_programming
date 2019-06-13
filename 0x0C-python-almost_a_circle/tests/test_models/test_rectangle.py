@@ -1,5 +1,6 @@
 import unittest
 from models.rectangle import Rectangle as RectangleClass
+import pep8
 
 
 def setUpModule():
@@ -8,6 +9,17 @@ def setUpModule():
 
 def tearDownModule():
         print("I'm teardown module")
+
+
+class TestCodeFormat(unittest.TestCase):
+        def test_pep8_conformance(self):
+                """Test that we conform to PEP8."""
+                pep8style = pep8.StyleGuide(quiet=True)
+                file1 = "models/rectangle.py"
+                file2 = "tests/test_models/test_rectangle.py"
+                result = pep8style.check_files([file1, file2])
+                self.assertEqual(result.total_errors, 0,
+                                 "Style errors (and warnings).")
 
 
 class TestRectangleClass(unittest.TestCase):

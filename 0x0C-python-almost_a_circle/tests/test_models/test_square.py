@@ -1,5 +1,6 @@
 import unittest
 from models.square import Square as SquareClass
+import pep8
 
 
 def setUpModule():
@@ -8,6 +9,17 @@ def setUpModule():
 
 def tearDownModule():
         print("I'm teardown module from Square")
+
+
+class TestCodeFormat(unittest.TestCase):
+    def test_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        file1 = "models/square.py"
+        file2 = "tests/test_models/test_square.py"
+        result = pep8style.check_files([file1, file2])
+        self.assertEqual(result.total_errors, 0,
+                         "Style errors (and warnings).")
 
 
 class TestSquareClass(unittest.TestCase):
