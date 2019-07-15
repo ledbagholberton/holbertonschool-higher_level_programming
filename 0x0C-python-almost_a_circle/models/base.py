@@ -108,7 +108,7 @@ class Base:
                 return [cls.create(**a) for a in my_list]
         except IOError:
             return []
-
+"""
     @staticmethod
     def draw(list_rectangles, list_squares):
         "draw with turtle"
@@ -139,3 +139,55 @@ class Base:
             turtle.left(90)
             turtle.forward(elem.size)
         turtle.exitonclick()
+"""
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+    """
+    class to create a rectangle object
+    """
+        ventana = turtle.Screen()
+        lapiz = turtle.Turtle()
+    
+        lapiz.pensize(2)
+    
+        for info in list_rectangles:
+            R = random.random()
+            B = random.random()
+            G = random.random()
+            lapiz.color(R, G, B)
+            print(info.x)
+            lapiz.up()
+            lapiz.setx(info.x)
+            lapiz.sety(info.y)
+            lapiz.down()
+            lapiz.begin_fill()
+            for i in range(2):
+                lapiz.forward(info.width)
+                lapiz.right(90)
+                lapiz.forward(info.height)
+                lapiz.right(90)
+            lapiz.end_fill()
+
+        for info in list_squares:
+            R = random.random()
+            B = random.random()
+            G = random.random()
+            lapiz.color(R, G, B)
+            print(info.x)
+            lapiz.up()
+            lapiz.setx(info.x)
+            lapiz.sety(info.y)
+            lapiz.down()
+            lapiz.begin_fill()
+            for i in range(2):
+                lapiz.forward(info.width)
+                lapiz.right(90)
+                lapiz.forward(info.height)
+                lapiz.right(90)
+            lapiz.end_fill()
+        ventana.exitonclick()
+        """
+        t = turtle.Turtle()
+        t.forward(100)
+        turtle.done()
+        """

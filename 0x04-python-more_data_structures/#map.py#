@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+def mymap(func,list):
+    array=[]
+    for i in list:
+        array.append(func(i))
+    return array
+
+
+pow = lambda x,y: x**y
+pow(3,2)
+
+
+mymap(lambda x: x + 2, [])

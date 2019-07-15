@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+def square_matrix_simple(matrix=[]):
+    if matrix is not None:
+        if matrix == []:
+            return matrix
+        else:
+            new_m = list(map(lambda x: list(map(lambda y: y * y, x)), matrix))
+            return(new_m)

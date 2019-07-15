@@ -4,5 +4,13 @@ def square_matrix_simple(matrix=[]):
         if matrix == []:
             return matrix
         else:
-            new_m = list(map(lambda x: list(map(lambda y: y * y, x)), matrix))
-            return(new_m)
+            n_matrix = []
+            for i in matrix:
+               n_matrix.append(i.copy())
+
+          #  n_matrix = matrix.copy()
+            for i in range(len(n_matrix)):
+                for j in range(len(n_matrix[i])):
+                    a = n_matrix[i][j] * n_matrix[i][j]
+                    n_matrix[i][j] = a
+            return(n_matrix)
