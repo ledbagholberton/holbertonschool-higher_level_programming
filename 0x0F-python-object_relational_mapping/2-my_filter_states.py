@@ -8,8 +8,8 @@ if __name__ == "__main__":
                            passwd=argv[2], db=argv[3], charset="utf8")
     name2 = argv[4]
     cur = conn.cursor()
-    cur.execute(("SELECT * FROM states WHERE name='{}'
-                 ORDER BY id DESC").format(name2))
+    cur.execute(("SELECT * FROM states WHERE name='{}'\
+                 ORDER BY id ASC").format(name2))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
