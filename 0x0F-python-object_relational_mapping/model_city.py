@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Definition model_city"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import ForeignKey
@@ -7,6 +8,7 @@ Base = declarative_base()
 
 
 class City(Base):
+    """Definition class City"""
     __tablename__ = "cities"
     id = Column('id', Integer, primary_key=True, autoincrement=True,
                 nullable=False, unique=True)
