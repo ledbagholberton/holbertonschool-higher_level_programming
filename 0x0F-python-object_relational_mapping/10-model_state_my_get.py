@@ -15,7 +15,7 @@ if __name__ == "__main__":
     session = Session()
     a = 0
     for state in session.query(State).filter(State.name == name2[0])\
-    .all():
+                                     .all():
         print("{}".format(state.id))
         a = 1
     if a == 0:
