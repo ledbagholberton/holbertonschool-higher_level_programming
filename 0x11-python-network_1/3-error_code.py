@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""send email ans look the return """
+"""print Error """
 import urllib.request
 import sys
 
@@ -8,5 +8,5 @@ try:
     with urllib.request.urlopen(url) as response:
         html = response.read().decode("utf-8")
 except urllib.error.URLError as e:
-    if hasattr(e,'code'):
+    if hasattr(e, 'code'):
         print ("Error code:", e.code)
