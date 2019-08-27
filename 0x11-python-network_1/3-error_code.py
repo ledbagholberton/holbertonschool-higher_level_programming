@@ -12,6 +12,5 @@ try:
 except urllib.error.HTTPError as e:
     if hasattr(e, 'code'):
         print ("Error code:", e.code)
-except urllib.error.URLError as e:
-    if hasattr(e, 'code'):
-        print ("Error code:", e.code)
+except:
+    pass
