@@ -5,7 +5,7 @@ import sys
 
 try:
     url = sys.argv[1]
-    html = requests.post(url)
+    html = requests.get(url)
     status = int(html.status_code)
     if status >= 400:
         print("Error code: ", status)
