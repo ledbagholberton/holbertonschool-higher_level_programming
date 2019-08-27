@@ -11,7 +11,7 @@ try:
         html = response.read().decode("utf-8")
         print(html)
 except urllib.error.HTTPError as e:
-    if hasattr(e, 'code'):
+    if hasattr (e, 'code'):
         print ("Error code:", e.code)
 except:
     pass
