@@ -15,5 +15,5 @@ try:
         print("No result")
     else:
         print("[{}] {}".format(my_json.get('id'), my_json.get('name')))
-except ValueError:
+except BaseException:
     print("Not a valid JSON")
