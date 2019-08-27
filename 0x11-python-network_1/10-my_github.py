@@ -4,17 +4,14 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = "http://swapi.co/api/people/?"
-    if len(sys.argv) < 2:
+    url = 'https://api.github.com/user'
+    if len(sys.argv) < 3:
         sys.exit(1)
     else:
-        data = {'search': sys.argv[1]}
-    html = requests.get(url, params=data)
-    try:
+        auth = (sys.argv[1], sys.argv[2])
+        html = requests.get(url, auth=auth)
         my_json = html.json()
-        print("Number of results: ", my_json.get('count'))
-        list_results = my_json.get('results')
-        for dict_results in list_results:
-            print(dict_results.get('name'))
-    except:
-        pass
+        try:
+            print(my_json.get('id'))
+        except:
+            pass
