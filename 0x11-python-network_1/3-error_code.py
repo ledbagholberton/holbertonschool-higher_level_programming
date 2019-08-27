@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """print Error """
 import urllib.request
+from urllib.error import HTTPError
 import sys
 
 
