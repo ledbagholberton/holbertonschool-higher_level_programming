@@ -3,6 +3,7 @@
 import urllib.request
 import sys
 
+
 try:
     url = sys.argv[1]
     with urllib.request.urlopen(url) as response:
@@ -12,5 +13,5 @@ except urllib.error.HTTPError as e:
     if hasattr(e, 'code'):
         print ("Error code:", e.code)
 except urllib.error.URLError as e:
-    if hasattr(e,'code'):
+    if hasattr(e, 'code'):
         print ("Error code:", e.code)
