@@ -8,6 +8,9 @@ try:
     with urllib.request.urlopen(url) as response:
         html = response.read().decode("utf-8")
         print(html)
-except urllib.error.URLError as e:
+except urllib.error.HTTPError as e:
     if hasattr(e, 'code'):
+        print ("Error code:", e.code)
+except urllib.error.URLError as e:
+    if hasattr(e,'code'):
         print ("Error code:", e.code)
