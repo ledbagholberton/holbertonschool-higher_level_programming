@@ -1,0 +1,6 @@
+#!/usr/bin/node
+// Function that increment and call 
+module.exports = function(number, nb) {
+  return (number + nb)
+}
+
