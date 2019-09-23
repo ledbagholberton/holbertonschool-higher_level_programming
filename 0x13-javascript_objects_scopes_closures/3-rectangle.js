@@ -4,11 +4,12 @@ module.exports = class Rectangle {
     if (h > 0 & w > 0) {
       this.height = h;
       this.width = w;
-      }
-  };
-  print(w, h) {
+    }
+  }
+
+  print (w, h) {
     for (let i = 0; i < this.height; i++) {
-        console.log('x'.repeat(this.width));
-        }
-    };
-}
+      console.log('x'.repeat(this.width));
+    }
+  }
+};
