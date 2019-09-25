@@ -13,7 +13,7 @@ const options = {
 };
 let myCount = 0;
 request(options, (err, res, body) => {
-  if (err) { console.log('Error'); }
+  if (err) { throw err; }
   const count = JSON.parse(body).count;
   for (let i = 0; i < count; i++) {
     const myList = JSON.parse(body).results[i].characters;
