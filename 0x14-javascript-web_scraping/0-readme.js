@@ -8,6 +8,6 @@ try {
   const text = fs.readFileSync(path, 'utf8');
   console.log(text);
 } catch (err) {
-  let myDict = { "Error: ": err.message, "errno: ": err.errno, "code: ": err.code, "syscall: ": err.syscall, "path: ": path}
+  const myDict = { 'Error: ': err.message, 'errno: ': err.errno, 'code: ': err.code, 'syscall: ': err.syscall, 'path: ': path };
   console.log(myDict);
 }
